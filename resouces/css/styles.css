@@ -227,7 +227,7 @@ ul li:focus-within > ul,
 /* about */
 
 .about-section {
-    background: url(/Users/stevensanchez/Documents/Projects/replay_flexbox_project/resouces/images/about-background.jpg);
+    background: url(../images/about-background.jpg);
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -457,7 +457,7 @@ ul li:focus-within > ul,
 /* newsletter */
 
 .newsletter-section {
-    background: url(/Users/stevensanchez/Documents/Projects/replay_flexbox_project/resouces/images/newsletter-background.jpg);
+    background: url(../images/newsletter-background.jpg);
     background-size: cover;
     background-position: top left;
     background-repeat: no-repeat;
