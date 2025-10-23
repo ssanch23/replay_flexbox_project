@@ -63,7 +63,6 @@ h5 {
 /* layout styles */
 .main-content {
     width: 100%;
-    position: absolute;
     margin-top: 5.3125rem; /* offset for fixed header */
 }
 
@@ -106,6 +105,8 @@ header {
     background-color: firebrick;
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     padding: 1rem 2rem;
 
     display: flex;
@@ -524,7 +525,7 @@ input[type=text]:focus {
     outline: none;
 }
 
-input[type=button] {
+input[type=submit] {
     text-decoration: underline transparent;
     text-underline-offset: 0.1rem;
     transition: text-decoration-color .2s ease-in-out .1s, text-underline-offset .2s ease-in-out .1s;
@@ -537,7 +538,7 @@ input[type=button] {
     cursor: pointer;
 }
 
-input[type=button]:hover {
+input[type=submit]:hover {
     text-decoration-color: linen;
     text-underline-offset: 0.3rem;
 }
