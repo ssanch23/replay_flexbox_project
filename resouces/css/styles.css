@@ -6,18 +6,25 @@
     padding: 0;
 }
 
+:root {
+    --font-text: "Figtree", "Helvetica Neue", Helvetica, sans-serif;  
+    --white: linen;
+    --green: darkslategray; 
+    --red: firebrick; 
+}
+
 /* text styles */
 html {
-    font-family: "Figtree", Helvetica, sans-serif;
+    font-family: var(--font-text);
     font-size: 16px;
     text-align: center;
-    color: linen;
-    background-color: linen;
+    color: var(--green);
+    background-color: var(--white);
     
 }
 
-.dark-text {
-    color: darkslategray;
+.light-text {
+    color: var(--white);
 }
 
 .uppercase {
@@ -66,13 +73,19 @@ h5 {
     margin-top: 5.3125rem; /* offset for fixed header */
 }
 
+header,
+footer,
+.dropdown {
+    background-color: var(--red);
+}
+
 li {
     list-style: none;
 }
 
 a {
     text-decoration: none;
-    color: linen;
+    color: var(--white);
     transition: color .2s ease-in-out .05s;
 }
 
@@ -81,11 +94,11 @@ svg {
 }
 
 a:hover {
-    color: darkslategray;
+    color: var(--green);
 }
 
 svg:hover {
-    fill: darkslategray;
+    fill: var(--green);
 }
 
 /* logo */
@@ -102,7 +115,6 @@ svg:hover {
 /* header */
 
 header {
-    background-color: firebrick;
     width: 100%;
     position: fixed;
     top: 0;
@@ -139,7 +151,6 @@ li.last {
 
 .dropdown {
     white-space: nowrap;    
-    background-color: firebrick;
     
     min-width: 5rem;
     position: absolute;
@@ -246,14 +257,14 @@ ul li:focus-within > ul,
 }
 
 .about-content h1 {
-    text-shadow: -0.08rem 0.08rem 0.25rem darkslategray;
+    text-shadow: -0.08rem 0.08rem 0.25rem var(--green);
     text-wrap: balance;
 }
 
 .about-content hr {
     height: .1rem;
     border: 0;
-    border-top: .1rem solid linen;
+    border-top: .1rem solid var(--white);
     margin: 1rem 0;
     padding: 0;
 }
@@ -362,7 +373,8 @@ ul li:focus-within > ul,
 }
 
 .image-info {
-    text-shadow: -0.08rem 0.08rem 0.25rem darkslategray;
+    color: var(--white);
+    text-shadow: -0.08rem 0.08rem 0.25rem var(--green);
     width: 85%;
     position: absolute;
     bottom: 50%;
@@ -392,31 +404,34 @@ ul li:focus-within > ul,
 /* showtime buttons */
 
 .showtimes {
-    font-family: "Figtree", Helvetica, sans-serif;
+    font-family: var(--font-text);
     font-weight: 700;
+    /*
     text-decoration: underline transparent;
     text-underline-offset: 0.1rem;
-    transition: text-decoration-color .2s ease-in-out .1s, text-underline-offset .2s ease-in-out .1s, border .25s ease-in-out .05s;
-    color: linen;
-    background-color: firebrick;
+    transition: text-decoration-color .2s ease-in-out .1s, text-underline-offset .2s ease-in-out .1s, border .25s ease-in-out .05s; 
+    */
+    color: var(--white);
+    background-color: var(--red);
     
     padding: .6rem; 
     margin: 0 .6rem;
-    border: .1rem solid firebrick; 
+    border: .1rem solid var(--red); 
     border-radius: .3125rem; 
     
     flex: 1;
     }
-
+/*
 .showtimes:hover {
     text-underline-offset: 0.3rem;
-    text-decoration-color: linen;
+    text-decoration-color: var(--white);
     cursor: pointer;
 }
 
 .showtimes:active {
-    border: .1rem solid linen;
+    border: .1rem solid var(--white);
  } 
+*/    
 
  @media only screen and (max-width: 782px) {
      .film {
@@ -500,16 +515,16 @@ ul li:focus-within > ul,
 }
 
 .sign-up-form input {
-    font-family: "Figtree", Helvetica, sans-serif;
+    font-family: var(--font-text);
     font-size: 1rem;
     font-weight: 700;
     border: none;
 }
 
 input[type=text] {
-    color: firebrick;
-    background-color: linen;
-    border-bottom: .25rem solid darkslategray;
+    color: var(--red);
+    background-color: var(--white);
+    border-bottom: .25rem solid var(--green);
 
     width: 100%;
     padding: 1.1rem 9.25rem 1.1rem 1rem;
@@ -517,7 +532,7 @@ input[type=text] {
 
 input[type=text]::placeholder {
     text-align: left;
-    color: darkslategray;
+    color: var(--green);
     opacity: 60%;
 }   
 
@@ -530,16 +545,16 @@ input[type=submit] {
     text-underline-offset: 0.1rem;
     transition: text-decoration-color .2s ease-in-out .1s, text-underline-offset .2s ease-in-out .1s;
     
-    color: linen;
-    background-color: darkslategray;
-    border-bottom: .25rem solid darkslategray;
+    color: var(--white);
+    background-color: var(--green);
+    border-bottom: .25rem solid var(--green);
 
     padding: 1.1rem 2rem;
     cursor: pointer;
 }
 
 input[type=submit]:hover {
-    text-decoration-color: linen;
+    text-decoration-color: var(--white);
     text-underline-offset: 0.3rem;
 }
 
@@ -582,12 +597,22 @@ input[type=submit]:hover {
 
 .previous-section .film-container {
     justify-content: center;
+    gap: .4rem;
+
+    overflow: hidden;          
 }
 
 .previous-section .film {
     max-width: 24rem;
     min-width: 19rem;
-    padding: .2rem;
+    padding: 0;
+
+    transition:
+        height 0.4s ease,
+        margin 0.4s ease,
+        padding 0.4s ease,
+        opacity 0.6s ease,
+        transform 0.5s ease; /* added transform for slide animation */
 }
 
 .previous-section .image-container::after {
@@ -610,12 +635,54 @@ input[type=submit]:hover {
     font-size: 1.5rem;
 }
 
-
-/* footer */
-footer {
-    background-color: firebrick;
+.previous-section .film.hidden {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(1.2rem) scale(0.98); /* subtle downward slide + shrink */
+    transition:
+        height 0.4s ease,
+        margin 0.4s ease,
+        padding 0.4s ease,
+        transform 0.5s ease,
+        opacity 0.6s ease 0.15s; /* fade slightly slower & start later */
 }
 
+.hidden-btn {
+    display: none;
+}
+
+.btn {
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    text-decoration: underline transparent;
+    text-underline-offset: 0.1rem;
+    text-transform: uppercase;
+    transition: text-decoration-color .2s ease-in-out .1s, text-underline-offset .2s ease-in-out .1s;
+    
+    color: var(--white);
+    background-color: var(--green);
+
+    margin-top: .2rem;
+    padding: 1.1rem 2rem;
+    cursor: pointer;
+}
+
+.show-less-btn {
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    text-decoration-color: var(--white);
+    text-underline-offset: 0.3rem;
+}
+
+/* footer */
 .connect-section {
     padding: 2.5rem 5% .3rem 5%;
     
