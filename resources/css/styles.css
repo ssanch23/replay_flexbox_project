@@ -27,15 +27,11 @@ html {
     color: var(--white);
 }
 
-.uppercase {
-    text-transform: uppercase;
-}
-
 p {
     font-size: 1rem;
 }
 
-h1, h2, h3, h5 {
+h1, h2, h3, h5, .uppercase {
     text-transform: uppercase;
 }
 
